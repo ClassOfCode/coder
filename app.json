@@ -1,0 +1,14 @@
+{
+    "name": "vscode",
+    "description": "Run VS Code on any machine anywhere and access it in the browser",
+    "repository": "https://github.com/ClassOfCode/coder",
+    "stack": "container",
+    "success_url": "/",
+    "env": {
+      "PASSWORD": {
+        "description": "Password for Code-Server.",
+        "value": "password",
+        "required" : true
+    } 
+  }
+}

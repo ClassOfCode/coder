@@ -1,0 +1,7 @@
+setup:
+  config:
+    PASSWORD: password
+
+build:
+  docker:
+    web: Dockerfile
