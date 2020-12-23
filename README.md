@@ -6,7 +6,7 @@ Run **VS Code** on any machine anywhere and access it in the browser.
 ![Screenshot](https://github.com/cdr/code-server/raw/v3.8.0/doc/assets/screenshot.png)
 
 #### Deploy to Heroku:
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ClassOfCode/coder/)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ClassOfCode/coder/tree/heroku/)
 
 #### Packages: 
 1. `cURL`
