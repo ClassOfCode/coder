@@ -42,18 +42,17 @@ jobs:
   push-ghcr:
     # Ensure test job passes before pushing image.
     name: Push Docker Container to GHCR
-    needs: build
+    #needs: build
     runs-on: ubuntu-latest
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' || github.event_name == 'workflow_dispatch'
     steps:
       - uses: actions/checkout@v2
 
+      - name: Log into registry
+        run: echo ${{ CR_PAT }} | docker login ghcr.io -u USERNAME --password-stdin 
+
       - name: Build Image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
-
-      - name: Log into registry
-        run: echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin 
-
 
       - name: Push Docker image to GitHub Container Registry
         run: |
