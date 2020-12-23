@@ -74,7 +74,7 @@ RUN code-server --force --install-extension github.github-vscode-theme
 
 #BASHRC Commands (Template :  echo 'x' >> .bashrc)
 #This adds Starship to BASH
-RUN echo 'eval "$(starship init bash)"' >> .bashrc && \
-    echo -e "{ \n    \"workbench.colorTheme\": \"GitHub Dark\" \n} \n" >> /home/coder/.local/share/code-server/User/settings.json 
+RUN echo -e '{\n    "workbench.colorTheme": "GitHub Dark" \n}' >> /home/coder/.local/share/code-server/User/settings.json && \
+    echo 'eval "$(starship init bash)"' >> .bashrc
 
 CMD /usr/local/bin/code-server --disable-telemetry --bind-addr 0.0.0.0:$PORT /home/coder/
