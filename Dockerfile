@@ -69,12 +69,12 @@ RUN wget -q https://github.com/starship/starship/releases/latest/download/starsh
 #Installing Node (LTS) & NPM (LTS)
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | sudo bash - && sudo apt-get install -y nodejs
 
+#Install Extensions
+RUN code-server --force --install-extension github.github-vscode-theme
+
 #BASHRC Commands (Template :  echo 'x' >> .bashrc)
 #This adds Starship to BASH
 RUN echo 'eval "$(starship init bash)"' >> .bashrc && \
     echo -e "{ \n    \"workbench.colorTheme\": \"GitHub Dark\" \n} \n" >> /home/coder/.local/share/code-server/User/settings.json 
-
-#Install Extensions
-RUN code-server --force --install-extension github.github-vscode-theme
 
 CMD /usr/local/bin/code-server --disable-telemetry --bind-addr 0.0.0.0:$PORT /home/coder/
