@@ -22,7 +22,6 @@ RUN apt-get update \
     pkg-config \
     python3-pip \
     build-essential \
-    texlive-latex-extra \
   && rm -rf /var/lib/apt/lists/*
  
 # https://wiki.debian.org/Locale#Manually
@@ -72,9 +71,10 @@ RUN curl -sL https://deb.nodesource.com/setup_lts.x | sudo bash - && sudo apt-ge
 
 #BASHRC Commands (Template :  echo 'x' >> .bashrc)
 #This adds Starship to BASH
-RUN echo 'eval "$(starship init bash)"' >> .bashrc
+RUN echo 'eval "$(starship init bash)"' >> .bashrc && \
+    echo -e "{ \n    \"workbench.colorTheme\": \"GitHub Dark\" \n} \n" >> /home/coder/.local/share/code-server/User/settings.json 
 
 #Install Extensions
 RUN code-server --force --install-extension github.github-vscode-theme
 
-CMD /usr/local/bin/code-server --disable-telemetry --bind-addr 0.0.0.0:$PORT
+CMD /usr/local/bin/code-server --disable-telemetry --bind-addr 0.0.0.0:$PORT /home/coder/
