@@ -1,5 +1,5 @@
 
-# VSCode on Heroku &middot; ![Test, Publish & Deploy](https://github.com/ClassOfCode/coder/workflows/Test,%20Publish%20&%20Deploy/badge.svg?branch=main) ![Push & Dispatch]
+# VSCode on Heroku &middot; ![Test, Publish & Deploy](https://github.com/ClassOfCode/coder/workflows/Test,%20Publish%20&%20Deploy/badge.svg?branch=main)
 
 Run **VS Code** on any machine anywhere and access it in the browser.
 
