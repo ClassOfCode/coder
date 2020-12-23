@@ -82,7 +82,7 @@ jobs:
   push-ghcr:
     # Ensure test job passes before pushing image.
     name: Push Docker Container to GHCR
-    needs: test
+    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
